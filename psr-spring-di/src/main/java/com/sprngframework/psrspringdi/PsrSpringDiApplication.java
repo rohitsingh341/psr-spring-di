@@ -1,6 +1,7 @@
 package com.sprngframework.psrspringdi;
 
 import com.sprngframework.psrspringdi.controllers.ConstructorInjectedController;
+import com.sprngframework.psrspringdi.controllers.MyController;
 import com.sprngframework.psrspringdi.controllers.PropertyInjectedController;
 import com.sprngframework.psrspringdi.controllers.SetterInjectedController;
 import org.springframework.boot.SpringApplication;
@@ -25,6 +26,9 @@ public class PsrSpringDiApplication {
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		System.out.println(constructorInjectedController.getGreeting());
 
+		System.out.println("Primary");
+		MyController myController = (MyController) ctx.getBean("myController");
+		System.out.println(myController.getGreeting());
 	}
 
 }
