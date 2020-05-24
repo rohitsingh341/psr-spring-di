@@ -1,10 +1,8 @@
 package com.sprngframework.psrspringdi.controllers;
 
-import com.sprngframework.psrspringdi.services.GreetingServiceImpl;
+import com.sprngframework.psrspringdi.services.ConstructorGreetingServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class ConstructorInjectedControllerTest {
 
@@ -12,7 +10,7 @@ class ConstructorInjectedControllerTest {
 
     @BeforeEach
     void setUp() {
-        constructorInjectedController = new ConstructorInjectedController(new GreetingServiceImpl());
+        constructorInjectedController = new ConstructorInjectedController(new ConstructorGreetingServiceImpl());
     }
 
     @Test

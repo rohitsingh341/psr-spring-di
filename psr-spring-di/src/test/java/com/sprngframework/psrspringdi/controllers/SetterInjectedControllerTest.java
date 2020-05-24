@@ -1,11 +1,8 @@
 package com.sprngframework.psrspringdi.controllers;
 
-import com.sprngframework.psrspringdi.services.GreetingServiceImpl;
-import jdk.nashorn.internal.objects.annotations.Setter;
+import com.sprngframework.psrspringdi.services.ConstructorGreetingServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SetterInjectedControllerTest {
 
@@ -14,7 +11,7 @@ class SetterInjectedControllerTest {
     @BeforeEach
     void setUp() {
         setterInjectedController = new SetterInjectedController();
-        setterInjectedController.setGreetingService(new GreetingServiceImpl());
+        setterInjectedController.setGreetingService(new ConstructorGreetingServiceImpl());
     }
 
     @Test
