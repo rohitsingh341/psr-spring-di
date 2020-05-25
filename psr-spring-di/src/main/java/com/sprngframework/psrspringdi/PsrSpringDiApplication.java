@@ -1,9 +1,6 @@
 package com.sprngframework.psrspringdi;
 
-import com.sprngframework.psrspringdi.controllers.ConstructorInjectedController;
-import com.sprngframework.psrspringdi.controllers.MyController;
-import com.sprngframework.psrspringdi.controllers.PropertyInjectedController;
-import com.sprngframework.psrspringdi.controllers.SetterInjectedController;
+import com.sprngframework.psrspringdi.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,6 +10,10 @@ public class PsrSpringDiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(PsrSpringDiApplication.class, args);
+
+		System.out.println("I18nController");
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
 
 		System.out.println("Property Injected Controller");
 		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");
